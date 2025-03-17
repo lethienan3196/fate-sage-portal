@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import PillarCard from '@/components/PillarCard';
@@ -162,10 +163,88 @@ const Index = () => {
                   <h3 className="text-lg font-semibold mb-4 text-center">Your Four Pillars (四柱)</h3>
                   
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <PillarCard title="Year" characters="丙子" />
-                    <PillarCard title="Month" characters="辛卯" />
-                    <PillarCard title="Day" characters="丁卯" />
-                    <PillarCard title="Hour" characters="丁未" />
+                    <PillarCard 
+                      title="Year" 
+                      heavenlyStem={{
+                        character: "丙",
+                        element: "Fire",
+                        tenGod: "Rob Wealth"
+                      }}
+                      earthlyBranch={{
+                        character: "子",
+                        hiddenStems: [
+                          {
+                            character: "癸",
+                            element: "Water",
+                            tenGod: "7 Killing"
+                          }
+                        ]
+                      }}
+                    />
+                    <PillarCard 
+                      title="Month" 
+                      heavenlyStem={{
+                        character: "辛",
+                        element: "Metal",
+                        tenGod: "Indirect Wealth"
+                      }}
+                      earthlyBranch={{
+                        character: "卯",
+                        hiddenStems: [
+                          {
+                            character: "乙",
+                            element: "Wood",
+                            tenGod: "Indirect Resource"
+                          }
+                        ]
+                      }}
+                    />
+                    <PillarCard 
+                      title="Day" 
+                      heavenlyStem={{
+                        character: "丁",
+                        element: "Fire",
+                        tenGod: "Self"
+                      }}
+                      earthlyBranch={{
+                        character: "卯",
+                        hiddenStems: [
+                          {
+                            character: "乙",
+                            element: "Wood",
+                            tenGod: "Indirect Resource"
+                          }
+                        ]
+                      }}
+                    />
+                    <PillarCard 
+                      title="Hour" 
+                      heavenlyStem={{
+                        character: "丁",
+                        element: "Fire",
+                        tenGod: "Friend"
+                      }}
+                      earthlyBranch={{
+                        character: "未",
+                        hiddenStems: [
+                          {
+                            character: "己",
+                            element: "Earth",
+                            tenGod: "Direct Officer"
+                          },
+                          {
+                            character: "丁",
+                            element: "Fire",
+                            tenGod: "Friend"
+                          },
+                          {
+                            character: "乙",
+                            element: "Wood",
+                            tenGod: "Indirect Resource"
+                          }
+                        ]
+                      }}
+                    />
                   </div>
                   
                   <div className="mt-8">
