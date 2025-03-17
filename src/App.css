@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,6 +6,7 @@
   text-align: center;
 }
 
+/* Make the logo responsive */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +41,94 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Add responsive styles for Tabs */
+@media (max-width: 640px) {
+  [data-radix-tabs-trigger] {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  
+  [data-radix-tabs-content] {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(to right, #3b82f6, #22c55e);
+  width: 0%;
+  z-index: 50;
+  transition: width 0.3s ease-out;
+}
+
+/* Element cards styling */
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Element chips */
+.water-chip, .wood-chip, .fire-chip, .earth-chip, .metal-chip {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.water-chip {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.wood-chip {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.fire-chip {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.earth-chip {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.metal-chip {
+  background-color: rgba(156, 163, 175, 0.1);
+  color: #9ca3af;
+}
+
+/* Animation classes */
+.section-transition {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section-transition.intersected {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.element-fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.element-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
