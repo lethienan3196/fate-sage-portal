@@ -1,11 +1,10 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import PillarCard from '@/components/PillarCard';
 import SectionHeading from '@/components/SectionHeading';
 import ElementChart from '@/components/ElementChart';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar, GraduationCap, Coins, Heart, ChevronDown, Clock, User, MapPin, ChevronRight, Briefcase, DollarSign, Users } from 'lucide-react';
+import { Calendar, GraduationCap, Coins, Heart, ChevronDown, Clock, User, MapPin, ChevronRight, Briefcase, DollarSign, Users, Sparkles } from 'lucide-react';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState<string>('basic');
@@ -118,7 +117,7 @@ const Index = () => {
             onValueChange={setActiveTab}
             className="w-full"
           >
-            <TabsList className="grid grid-cols-4 w-full max-w-2xl mx-auto mb-10">
+            <TabsList className="grid grid-cols-5 w-full max-w-3xl mx-auto mb-10">
               <TabsTrigger value="basic" className="flex items-center gap-2">
                 <User className="h-4 w-4" />
                 <span>Basic Info</span>
@@ -134,6 +133,10 @@ const Index = () => {
               <TabsTrigger value="marriage" className="flex items-center gap-2">
                 <Heart className="h-4 w-4" />
                 <span>Marriage</span>
+              </TabsTrigger>
+              <TabsTrigger value="2025" className="flex items-center gap-2">
+                <Sparkles className="h-4 w-4" />
+                <span>2025 Forecast</span>
               </TabsTrigger>
             </TabsList>
             
@@ -727,292 +730,4 @@ const Index = () => {
                   <div className="glass-card p-8">
                     <h3 className="text-xl font-semibold mb-4">Relationship Overview</h3>
                     
-                    <div className="space-y-6">
-                      <p className="text-gray-600">
-                        In your BaZi chart, relationship and marriage stars are primarily represented by the Metal element. Your chart shows:
-                      </p>
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-white rounded-lg p-4 border">
-                          <h4 className="font-medium mb-2">Spouse/Partner Stars</h4>
-                          <p className="text-sm text-gray-600 mb-2">
-                            <span className="font-medium">Primary:</span> 辛 (Metal) in Month Pillar
-                          </p>
-                          <p className="text-sm text-gray-600">
-                            <span className="font-medium">Marriage Palace:</span> 卯 (Rabbit) in your chart
-                          </p>
-                        </div>
-                        
-                        <div className="bg-white rounded-lg p-4 border">
-                          <h4 className="font-medium mb-2">Relationship Pattern</h4>
-                          <div className="text-sm space-y-2">
-                            <div className="flex items-center justify-between">
-                              <span className="text-gray-600">Emotional</span>
-                              <div className="w-32 h-2 bg-gray-200 rounded-full">
-                                <div className="bg-red-500 h-2 rounded-full" style={{ width: '70%' }}></div>
-                              </div>
-                              <span className="text-gray-600">Practical</span>
-                            </div>
-                            
-                            <div className="flex items-center justify-between">
-                              <span className="text-gray-600">Independent</span>
-                              <div className="w-32 h-2 bg-gray-200 rounded-full">
-                                <div className="bg-blue-500 h-2 rounded-full" style={{ width: '60%' }}></div>
-                              </div>
-                              <span className="text-gray-600">Attached</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <h4 className="text-lg font-medium mb-3">Relationship Strengths</h4>
-                        <ul className="space-y-2 text-gray-600">
-                          <li className="flex items-start gap-2">
-                            <ChevronRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0" />
-                            <span>Natural charisma and warmth that attracts partners (Fire day master)</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <ChevronRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0" />
-                            <span>Ability to be nurturing and supportive in relationships (Wood influence)</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <ChevronRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0" />
-                            <span>Creative approach to solving relationship challenges</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <ChevronRight className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0" />
-                            <span>Desire for growth and evolution in partnerships</span>
-                          </li>
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h4 className="text-lg font-medium mb-3">Relationship Challenges</h4>
-                        <ul className="space-y-2 text-gray-600">
-                          <li className="flex items-start gap-2">
-                            <ChevronRight className="w-4 h-4 text-red-500 mt-1 flex-shrink-0" />
-                            <span>Tendency to seek emotional intensity, which may create relationship volatility</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <ChevronRight className="w-4 h-4 text-red-500 mt-1 flex-shrink-0" />
-                            <span>Potential for emotionally-driven decisions in relationships</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <ChevronRight className="w-4 h-4 text-red-500 mt-1 flex-shrink-0" />
-                            <span>Need to balance personal independence with partnership needs</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Compatible Partners & Timeline */}
-                <div className="md:col-span-5">
-                  <div className="glass-card p-6 mb-6 element-fade-in">
-                    <h3 className="font-semibold mb-4">Compatible Partners</h3>
-                    
-                    <div className="space-y-4">
-                      <p className="text-sm text-gray-600">
-                        Based on your BaZi, you tend to be most compatible with partners who:
-                      </p>
-                      
-                      <div className="bg-white rounded-lg p-4 border">
-                        <h4 className="font-medium mb-2">Highly Compatible Elements</h4>
-                        <div className="grid grid-cols-2 gap-3">
-                          <div className="metal-chip flex items-center justify-center py-1">Metal (金)</div>
-                          <div className="water-chip flex items-center justify-center py-1">Water (水)</div>
-                          <div className="earth-chip flex items-center justify-center py-1">Earth (土)</div>
-                        </div>
-                        <p className="text-xs text-gray-500 mt-2">
-                          People with strong Metal, Water, or Earth qualities in their chart
-                        </p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-medium mb-2">Ideal Partner Traits</h4>
-                        <ul className="text-sm text-gray-600 space-y-2">
-                          <li className="flex items-start gap-2">
-                            <Users className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                            <span>Grounded, practical individuals who complement your creativity</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <Users className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                            <span>Partners with analytical abilities and structured thinking</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <Users className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                            <span>Those who appreciate your warmth while providing stability</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="glass-card p-6 element-fade-in">
-                    <h3 className="font-semibold mb-4">Relationship Timeline</h3>
-                    
-                    <div className="space-y-5">
-                      <div className="relative border-l-2 border-blue-200 pl-5 py-1 ml-1">
-                        <div className="mb-5 relative">
-                          <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-blue-500"></div>
-                          <div className="water-chip mb-2">Early Relationships (2017-2026)</div>
-                          <p className="text-sm text-gray-600">
-                            During the 甲午 period, relationships may focus on personal growth and exploration. You may encounter various partners who help you discover more about yourself.
-                          </p>
-                        </div>
-                        
-                        <div className="mb-5 relative">
-                          <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-green-500"></div>
-                          <div className="wood-chip mb-2">Stability Phase (2027-2036)</div>
-                          <p className="text-sm text-gray-600">
-                            The 乙未 period brings more stability and potential for serious commitment. This is a favorable time for marriage or long-term partnership formation.
-                          </p>
-                        </div>
-                        
-                        <div className="relative">
-                          <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-red-500"></div>
-                          <div className="fire-chip mb-2">Relationship Maturity (2037-2046)</div>
-                          <p className="text-sm text-gray-600">
-                            The 丙申 period indicates a time of relationship deepening and maturity. Your partnership may evolve to include shared goals beyond the personal sphere.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="mt-6 pt-4 border-t">
-                      <h4 className="font-medium mb-3">Relationship Guidance</h4>
-                      <ul className="text-sm text-gray-600 space-y-2">
-                        <li className="flex items-start gap-2">
-                          <Heart className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                          <span>Seek balance between emotional expression and rational decision-making</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <Heart className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                          <span>Value partners who appreciate your creativity while providing structure</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <Heart className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                          <span>Develop patience and consistency in your relationship approach</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-          </Tabs>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-12 bg-gray-100">
-        <div className="container max-w-5xl">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">BaZi Destiny Analysis</h2>
-            <p className="text-gray-600 mb-6">
-              Ancient wisdom for modern guidance
-            </p>
-            <p className="text-sm text-gray-500">
-              Based on traditional Chinese BaZi (八字) analysis for birth date: March 31, 1996
-            </p>
-          </div>
-        </div>
-      </footer>
-
-      {/* Add CSS styles for animations and element transitions */}
-      <style jsx>{`
-        .scroll-indicator {
-          position: fixed;
-          top: 0;
-          left: 0;
-          height: 3px;
-          background: linear-gradient(to right, #3b82f6, #60a5fa);
-          z-index: 100;
-          width: 0%;
-        }
-        
-        .water-chip {
-          display: inline-block;
-          background-color: rgba(59, 130, 246, 0.1);
-          color: #3b82f6;
-          font-size: 0.75rem;
-          font-weight: 500;
-          padding: 0.25rem 0.75rem;
-          border-radius: 9999px;
-          border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-        
-        .fire-chip {
-          display: inline-block;
-          background-color: rgba(239, 68, 68, 0.1);
-          color: #ef4444;
-          font-size: 0.75rem;
-          font-weight: 500;
-          padding: 0.25rem 0.75rem;
-          border-radius: 9999px;
-          border: 1px solid rgba(239, 68, 68, 0.2);
-        }
-        
-        .wood-chip {
-          display: inline-block;
-          background-color: rgba(34, 197, 94, 0.1);
-          color: #22c55e;
-          font-size: 0.75rem;
-          font-weight: 500;
-          padding: 0.25rem 0.75rem;
-          border-radius: 9999px;
-          border: 1px solid rgba(34, 197, 94, 0.2);
-        }
-        
-        .metal-chip {
-          display: inline-block;
-          background-color: rgba(156, 163, 175, 0.1);
-          color: #6b7280;
-          font-size: 0.75rem;
-          font-weight: 500;
-          padding: 0.25rem 0.75rem;
-          border-radius: 9999px;
-          border: 1px solid rgba(156, 163, 175, 0.2);
-        }
-        
-        .earth-chip {
-          display: inline-block;
-          background-color: rgba(245, 158, 11, 0.1);
-          color: #f59e0b;
-          font-size: 0.75rem;
-          font-weight: 500;
-          padding: 0.25rem 0.75rem;
-          border-radius: 9999px;
-          border: 1px solid rgba(245, 158, 11, 0.2);
-        }
-        
-        .glass-card {
-          background-color: rgba(255, 255, 255, 0.7);
-          backdrop-filter: blur(10px);
-          border-radius: 0.75rem;
-          border: 1px solid rgba(209, 213, 219, 0.3);
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-        }
-        
-        .element-fade-in {
-          opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        
-        .element-visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        
-        .section-transition {
-          transition: opacity 0.3s ease;
-        }
-      `}</style>
-    </div>
-  );
-};
-
-export default Index;
+                    <div className="space-y
