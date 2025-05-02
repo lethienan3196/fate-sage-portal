@@ -9,8 +9,13 @@ import VitalSigns from "@/components/health/VitalSigns";
 import Medications from "@/components/health/Medications";
 import NutritionTracker from "@/components/health/NutritionTracker";
 import BaziHealth from "@/components/health/BaziHealth";
+import BaziReportHealth from "@/components/health/BaziReportHealth";
 
 const Health = () => {
+  // This would typically come from your Bazi report data
+  // For now, we'll use a default element
+  const dominantElement = "Wood";
+  
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex items-center mb-8">
@@ -63,7 +68,14 @@ const Health = () => {
         </TabsContent>
 
         <TabsContent value="bazi">
-          <BaziHealth />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div>
+              <BaziHealth />
+            </div>
+            <div>
+              <BaziReportHealth element={dominantElement} />
+            </div>
+          </div>
         </TabsContent>
       </Tabs>
     </div>
