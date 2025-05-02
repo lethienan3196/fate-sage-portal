@@ -8,6 +8,7 @@ import HealthOverview from "@/components/health/HealthOverview";
 import VitalSigns from "@/components/health/VitalSigns";
 import Medications from "@/components/health/Medications";
 import NutritionTracker from "@/components/health/NutritionTracker";
+import BaziHealth from "@/components/health/BaziHealth";
 
 const Health = () => {
   return (
@@ -22,7 +23,7 @@ const Health = () => {
       </div>
       
       <Tabs defaultValue="overview" className="w-full">
-        <TabsList className="grid grid-cols-4 mb-8">
+        <TabsList className="grid grid-cols-5 mb-8">
           <TabsTrigger value="overview" className="flex items-center gap-2">
             <Heart className="h-4 w-4" />
             <span>Overview</span>
@@ -38,6 +39,10 @@ const Health = () => {
           <TabsTrigger value="nutrition" className="flex items-center gap-2">
             <Utensils className="h-4 w-4" />
             <span>Nutrition</span>
+          </TabsTrigger>
+          <TabsTrigger value="bazi" className="flex items-center gap-2">
+            <Activity className="h-4 w-4" />
+            <span>Bazi</span>
           </TabsTrigger>
         </TabsList>
         
@@ -55,6 +60,10 @@ const Health = () => {
         
         <TabsContent value="nutrition">
           <NutritionTracker />
+        </TabsContent>
+
+        <TabsContent value="bazi">
+          <BaziHealth />
         </TabsContent>
       </Tabs>
     </div>
