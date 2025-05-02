@@ -15,7 +15,7 @@ import {
   TableHeader, 
   TableRow 
 } from "@/components/ui/table";
-import { Heart, Balance, Brain, Lungs, Circle } from "lucide-react";
+import { Heart, Scale, Brain, Wind, CircleIcon } from "lucide-react";
 
 interface ElementHealthData {
   organs: string;
@@ -144,7 +144,7 @@ const BaziReportHealth: React.FC<BaziReportHealthProps> = ({ element }) => {
             <Card className="shadow-sm">
               <CardHeader className="pb-2">
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Lungs className="h-4 w-4" />
+                  <Wind className="h-4 w-4" />
                   Health Recommendations
                 </CardTitle>
               </CardHeader>
@@ -161,7 +161,7 @@ const BaziReportHealth: React.FC<BaziReportHealthProps> = ({ element }) => {
           <Card className="mt-4 shadow-sm">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg flex items-center gap-2">
-                <Balance className="h-4 w-4" />
+                <Scale className="h-4 w-4" />
                 Element Balance
               </CardTitle>
             </CardHeader>
